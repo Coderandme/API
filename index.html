@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citations Viewer</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Citations Viewer</h1>
+        {% for citation in citations %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Response:</h5>
+                    <p class="card-text">{{ citation.response }}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Sources:</h6>
+                    <ul class="list-group">
+                        {% for source in citation.source %}
+                            <li class="list-group-item">
+                                <strong>ID:</strong> {{ source.id }} <br>
+                                {% if source.link %}
+                                    <strong>Link:</strong> <a href="{{ source.link }}" target="_blank">{{ source.link }}</a>
+                                {% else %}
+                                    <strong>Link:</strong> No link provided
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
