@@ -8,7 +8,7 @@ Files and their Information
 
 1. index.html - 
    Purpose: This is the HTML template for the web application's front-end. It uses Bootstrap for styling and is
-   responsible for displaying the responses and their corresponding sources in a user-friendly format.
+   responsible for displaying the responses and their corresponding sources in a user-friendly format. Please note that this file should be inside a folder called templates.
 
 2. app.py -
    Purpose: This file contains the Flask application that serves the web interface and handles routing. It 
